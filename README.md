@@ -58,6 +58,9 @@ go build -o secrypt main.go
 #### Running a Full Validating Node
 After you have [downloaded](https://github.com/SECRYPT-2022/SECRYPT/releases/latest) the binaries or [built from source](https://github.com/SECRYPT-2022/SECRYPT#build-from-source), enter the `SECRYPT` directory and run the following:
 ```
+mkdir ~/.secrypt
+```
+```
 ./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --seal --max-slots 40960 --grpc 0.0.0.0:9632 --libp2p 0.0.0.0:1478 --jsonrpc 0.0.0.0:8545 --max-inbound-peers 128 --max-outbound-peers 16
 ```
 
