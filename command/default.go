@@ -9,7 +9,7 @@ const (
 	DefaultPremineBalance  = "0x33B2E3C9FD0803CE8000000" // 1 billion units of native network currency
 	DefaultConsensus       = server.IBFTConsensus
 	DefaultGenesisGasUsed  = 458752  // 0x70000
-	DefaultGenesisGasLimit = 5242880 // 0x500000
+	DefaultGenesisGasLimit = 30000000 // 0x500000
 )
 
 const (

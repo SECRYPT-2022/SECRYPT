@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/SECRYPT-2022/SECRYPT/command"
+	"github.com/SECRYPT-2022/SECRYPT/command/genesis/predeploy"
 	"github.com/SECRYPT-2022/SECRYPT/command/helper"
 	"github.com/SECRYPT-2022/SECRYPT/consensus/ibft"
 	"github.com/SECRYPT-2022/SECRYPT/helper/common"
@@ -25,6 +26,11 @@ func GetCommand() *cobra.Command {
 	setLegacyFlags(genesisCmd)
 
 	helper.SetRequiredFlags(genesisCmd, params.getRequiredFlags())
+
+	genesisCmd.AddCommand(
+		// genesis predeploy
+		predeploy.GetCommand(),
+	)
 
 	return genesisCmd
 }

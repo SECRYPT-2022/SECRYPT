@@ -95,7 +95,7 @@ func DefaultConfig() *Config {
 			),
 		},
 		Telemetry:  &Telemetry{},
-		ShouldSeal: true,
+		ShouldSeal: false,
 		TxPool: &TxPool{
 			PriceLimit:         0,
 			MaxSlots:           4096,

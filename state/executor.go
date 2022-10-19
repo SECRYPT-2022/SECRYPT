@@ -6,6 +6,8 @@ import (
 	"math"
 	"math/big"
 
+	"github.com/SECRYPT-2022/SECRYPT/state/runtime/evm"
+
 	"github.com/hashicorp/go-hclog"
 
 	"github.com/SECRYPT-2022/SECRYPT/chain"
@@ -192,6 +194,18 @@ type Transition struct {
 	// result
 	receipts []*types.Receipt
 	totalGas uint64
+}
+
+func NewTransition(config chain.ForksInTime, radix *Txn) *Transition {
+	return &Transition{
+		config: config,
+		state:  radix,
+		r: &Executor{
+			runtimes: []runtime.Runtime{
+				evm.NewEVM(),
+			},
+		},
+	}
 }
 
 func (t *Transition) TotalGas() uint64 {

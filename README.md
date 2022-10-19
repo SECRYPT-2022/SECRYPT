@@ -18,7 +18,7 @@
 * Testnet RPC - https://testnet.secrypt.tech
 
 ### Build from Source (Ubuntu 20.04)
-Requirements - `Go >=1.17`
+Requirements - `Go >=1.18.x`
 
 #### Setup Go Path
 ```
@@ -35,9 +35,9 @@ source ~/.profile
 
 #### Install Go
 ```
-wget https://go.dev/dl/go1.17.13.linux-amd64.tar.gz
-sudo tar -xvf go1.17.13.linux-amd64.tar.gz
-sudo mv go /usr/local && rm go1.17.13.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.18.7.linux-amd64.tar.gz
+sudo tar -xvf go1.18.7.linux-amd64.tar.gz
+sudo mv go /usr/local && rm go1.18.7.linux-amd64.tar.gz
 ```
 Check that it's installed
 ```
@@ -45,7 +45,7 @@ go version
 ```
 You should see something like this:
 ```
-go version go1.17.13 linux/amd64
+go version go1.18.7 linux/amd64
 ```
 
 #### Build SECRYPT
@@ -69,7 +69,6 @@ After you have [downloaded](https://github.com/SECRYPT-2022/SECRYPT/releases/lat
 
 ---
 ```
-Copyright 2022 Polygon Technology
 Copyright 2022 SECRYPT
 
 Licensed under the Apache License, Version 2.0 (the "License");
