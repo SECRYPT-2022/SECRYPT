@@ -37,7 +37,7 @@ cp .env.example .env
 
 Now open up the .env file and fill out the missing parts. Fill out the variables like so:
 ```
-JSONRPC_URL=http://192.168.128.74:8545
+JSONRPC_URL=http://ttv-wkqbnkghpr.dynamic-m.com:8544/
 PRIVATE_KEYS=YOUR_VALIDATOR_PRIVATE_KEY_HERE
 STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
 ```
