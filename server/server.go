@@ -89,9 +89,9 @@ func newFileLogger(config *Config) (hclog.Logger, error) {
 		return nil, fmt.Errorf("could not create log file, %w", err)
 	}
 
+
 	return hclog.New(&hclog.LoggerOptions{
-//should the below be changed to SECRYPT?
-		Name:   "polygon",
+		Name:   "SECRYPT",
 		Level:  config.LogLevel,
 		Output: logFileWriter,
 	}), nil
@@ -100,8 +100,7 @@ func newFileLogger(config *Config) (hclog.Logger, error) {
 // newCLILogger returns minimal logger instance that sends all logs to standard output
 func newCLILogger(config *Config) hclog.Logger {
 	return hclog.New(&hclog.LoggerOptions{
-//should the below be changed to SECRYPT?
-		Name:  "polygon",
+		Name:  "SECRYPT",
 		Level: config.LogLevel,
 	})
 }
@@ -143,12 +142,11 @@ func NewServer(config *Config) (*Server, error) {
 	if err := common.SetupDataDir(config.DataDir, dirPaths); err != nil {
 		return nil, fmt.Errorf("failed to create data directories: %w", err)
 	}
-//should the below be changed to SECRYPT?
 	if config.Telemetry.PrometheusAddr != nil {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, true)
+		m.serverMetrics = metricProvider("SECRYPT", config.Chain.Name, true)
 		m.prometheusServer = m.startPrometheusServer(config.Telemetry.PrometheusAddr)
 	} else {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, false)
+		m.serverMetrics = metricProvider("SECRYPT", config.Chain.Name, false)
 	}
 
 	// Set up datadog profiler
