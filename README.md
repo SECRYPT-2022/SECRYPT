@@ -17,7 +17,7 @@
 * Mainnet RPC - https://mainnet.secrypt.tech
 * Testnet RPC - https://testnet.secrypt.tech
 
-### Build from Source (Ubuntu 20.04)
+## Build from Source (Ubuntu 20.04)
 Requirements - `Go >=1.18.x`
 
 #### Setup Go Path
@@ -33,7 +33,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source ~/.profile
 ```
 
-#### Install Go
+### Install Go
 ```
 wget https://go.dev/dl/go1.18.7.linux-amd64.tar.gz
 sudo tar -xvf go1.18.7.linux-amd64.tar.gz
@@ -48,27 +48,31 @@ You should see something like this:
 go version go1.18.7 linux/amd64
 ```
 
-#### Build SECRYPT
+### Build SECRYPT
 ```
 git clone https://github.com/SECRYPT-2022/SECRYPT.git
 cd SECRYPT/
 go build -o secrypt main.go
 ```
 
-#### Running a Full Validating Node
-After you have [downloaded](https://github.com/SECRYPT-2022/SECRYPT/releases/latest) the binaries or [built from source](https://github.com/SECRYPT-2022/SECRYPT#build-from-source), enter the `SECRYPT` directory and run the following:
+### Create data directory
 ```
 mkdir ~/.secrypt
 ```
-```
-./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --seal --max-slots 40960 --grpc 0.0.0.0:9632 --libp2p 0.0.0.0:1478 --jsonrpc 0.0.0.0:8545 --max-inbound-peers 128 --max-outbound-peers 16
-```
 
-#### Running a non-Validating node
+## Running a Node
+### Running a Full Validating Node
+After you have [downloaded](https://github.com/SECRYPT-2022/SECRYPT/releases/latest) the binaries or [built from source](https://github.com/SECRYPT-2022/SECRYPT#build-from-source), go [here](ValidatorGuide.md) and follow the guide:
+
+### Running a non-Validating node
 ```
 ./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --libp2p 0.0.0.0:1478 --nat <public_or_private_ip>
 ```
 
+### Running a Full non-Validating node
+```
+./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --jsonrpc 0.0.0.0:8545 --libp2p 0.0.0.0:1478 --grpc 0.0.0.0:9632 --max-inbound-peers 128 --max-outbound-peers 16 --max-slots 40960 --nat <public_or_private_ip>
+```
 
 ---
 ```
