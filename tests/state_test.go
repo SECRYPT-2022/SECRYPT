@@ -11,8 +11,6 @@ import (
 	"github.com/SECRYPT-2022/SECRYPT/chain"
 	"github.com/SECRYPT-2022/SECRYPT/helper/hex"
 	"github.com/SECRYPT-2022/SECRYPT/state"
-	"github.com/SECRYPT-2022/SECRYPT/state/runtime/evm"
-	"github.com/SECRYPT-2022/SECRYPT/state/runtime/precompiled"
 	"github.com/SECRYPT-2022/SECRYPT/types"
 	"github.com/hashicorp/go-hclog"
 )
@@ -51,8 +49,6 @@ func RunSpecificTest(t *testing.T, file string, c stateCase, name, fork string, 
 	forks := config.At(uint64(env.Number))
 
 	xxx := state.NewExecutor(&chain.Params{Forks: config, ChainID: 1}, s, hclog.NewNullLogger())
-	xxx.SetRuntime(precompiled.NewPrecompiled())
-	xxx.SetRuntime(evm.NewEVM())
 
 	xxx.PostHook = func(t *state.Transition) {
 		if name == "failed_tx_xcf416c53" {

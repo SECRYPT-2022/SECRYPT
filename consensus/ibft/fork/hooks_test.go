@@ -12,7 +12,6 @@ import (
 	stakingHelper "github.com/SECRYPT-2022/SECRYPT/helper/staking"
 	"github.com/SECRYPT-2022/SECRYPT/state"
 	itrie "github.com/SECRYPT-2022/SECRYPT/state/immutable-trie"
-	"github.com/SECRYPT-2022/SECRYPT/state/runtime/evm"
 	"github.com/SECRYPT-2022/SECRYPT/types"
 	"github.com/SECRYPT-2022/SECRYPT/validators"
 	"github.com/SECRYPT-2022/SECRYPT/validators/store"
@@ -283,8 +282,6 @@ func newTestTransition(
 	}, st, hclog.NewNullLogger())
 
 	rootHash := ex.WriteGenesis(nil)
-
-	ex.SetRuntime(evm.NewEVM())
 	ex.GetHash = func(h *types.Header) state.GetHashByNumber {
 		return func(i uint64) types.Hash {
 			return rootHash

@@ -15,17 +15,18 @@ permissions:
 jobs:
   snyk:
     name: Snyk and Publish
-    uses: SECRYPT-2022/SECRYPT/.github/workflows/security.yml@develop
+    uses: ./.github/workflows/security.yml
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      SNYK_ORG: ${{ secrets.SNYK_ORG }}
 
   build:
     name: Build
-    uses: SECRYPT-2022/SECRYPT/.github/workflows/build.yml@develop
+    uses: ./.github/workflows/build.yml
 
   test:
     name: Test
-    uses: SECRYPT-2022/SECRYPT/.github/workflows/test.yml@develop
+    uses: ./.github/workflows/test.yml
     needs: build
 
   deploy_devnet:

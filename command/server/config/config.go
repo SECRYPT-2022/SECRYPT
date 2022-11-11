@@ -30,6 +30,7 @@ type Config struct {
 	LogFilePath              string     `json:"log_to" yaml:"log_to"`
 	JSONRPCBatchRequestLimit uint64     `json:"json_rpc_batch_request_limit" yaml:"json_rpc_batch_request_limit"`
 	JSONRPCBlockRangeLimit   uint64     `json:"json_rpc_block_range_limit" yaml:"json_rpc_block_range_limit"`
+	JSONLogFormat            bool       `json:"json_log_format" yaml:"json_log_format"`
 }
 
 // Telemetry holds the config details for metric services.
@@ -62,7 +63,7 @@ type Headers struct {
 
 const (
 	// DefaultBlockTime minimum block generation time in seconds
-	DefaultBlockTime uint64 = 120
+	DefaultBlockTime uint64 = 2
 
 	// BlockTimeMultiplierForTimeout Multiplier to get IBFT timeout from block time
 	// timeout is calculated when IBFT timeout is not specified
@@ -95,7 +96,7 @@ func DefaultConfig() *Config {
 			),
 		},
 		Telemetry:  &Telemetry{},
-		ShouldSeal: false,
+		ShouldSeal: true,
 		TxPool: &TxPool{
 			PriceLimit:         0,
 			MaxSlots:           4096,

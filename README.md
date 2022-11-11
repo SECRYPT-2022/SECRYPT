@@ -1,82 +1,22 @@
-## SECRYPT
-* Name - SECRYPT
-* Symbol - SXC
-* Supply - 1 billion
-* Blocktime - 2 minutes
-* Consensus - PoS
-* P2P Port - 1478
-* JSON-RPC Port - 8545 
-* ChainID Main - 1143
-* ChainID Test - 1144
-* EVM Compatible
 
-## Official Links
-* Website - https://secrypt.tech
-* Mainnet Explorer - https://explorer-mainnet.secrypt.tech
-* Testnet Explorer - https://explorer-testnet.secrypt.tech
-* Mainnet RPC - https://mainnet.secrypt.tech
-* Testnet RPC - https://testnet.secrypt.tech
+![Banner](.github/banner.jpg)
+[![codecov](https://codecov.io/gh/SECRYPT-2022/SECRYPT/branch/develop/graph/badge.svg?token=PXEADRC1IW)](https://codecov.io/gh/SECRYPT-2022/SECRYPT)
+## Polygon Edge
 
-## Build from Source (Ubuntu 20.04)
-Requirements - `Go >=1.18.x`
+Polygon Edge is a modular and extensible framework for building Ethereum-compatible blockchain networks.
 
-#### Setup Go Path
-```
-sudo nano ~/.profile
-```
-Paste this into the bottom of the file
-```
-export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-```
-```
-source ~/.profile
-```
+To find out more about Polygon, visit the [official website](https://polygon.technology/).
 
-### Install Go
-```
-wget https://go.dev/dl/go1.18.7.linux-amd64.tar.gz
-sudo tar -xvf go1.18.7.linux-amd64.tar.gz
-sudo mv go /usr/local && rm go1.18.7.linux-amd64.tar.gz
-```
-Check that it's installed
-```
-go version
-```
-You should see something like this:
-```
-go version go1.18.7 linux/amd64
-```
+WARNING: This is a work in progress so architectural changes may happen in the future. The code has not been audited yet, so please contact [Polygon Edge team](mailto:edge@polygon.technology) if you would like to use it in production.
 
-### Build SECRYPT
-```
-git clone https://github.com/SECRYPT-2022/SECRYPT.git
-cd SECRYPT/
-go build -o secrypt main.go
-```
+## Documentation 📝
 
-### Create data directory
-```
-mkdir ~/.secrypt
-```
-
-## Running a Node
-### Running a Full Validating Node
-After you have [downloaded](https://github.com/SECRYPT-2022/SECRYPT/releases/latest) the binaries or [built from source](https://github.com/SECRYPT-2022/SECRYPT#build-from-source), go [here](ValidatorGuide.md) and follow the guide:
-
-### Running a non-Validating node
-```
-./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --libp2p 0.0.0.0:1478 --nat <public_or_private_ip>
-```
-
-### Running a Full non-Validating node
-```
-./secrypt server --data-dir ~/.secrypt --chain mainnet-genesis.json --jsonrpc 0.0.0.0:8545 --libp2p 0.0.0.0:1478 --grpc 0.0.0.0:9632 --max-inbound-peers 128 --max-outbound-peers 16 --max-slots 40960 --nat <public_or_private_ip>
-```
+If you'd like to learn more about the Polygon Edge, how it works and how you can use it for your project,
+please check out the **[Polygon Edge Documentation](https://docs.polygon.technology/docs/edge/overview/)**.
 
 ---
-```
-Copyright 2022 SECRYPT
+
+Copyright 2022 Polygon Technology
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -89,4 +29,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-```

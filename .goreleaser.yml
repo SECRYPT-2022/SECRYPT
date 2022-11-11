@@ -71,7 +71,7 @@ archives:
       - README.md
 
 #nfpms:
-#  - vendor: SECRYPT-2022
+#  - vendor: 0xPolygon
 #    homepage: https://polygon.technology
 #    maintainer: Polygon Edge Team <edge@polygon.technology>
 #    description:  A Framework for Building Ethereum-compatible Blockchain Networks
@@ -97,7 +97,7 @@ snapshot:
 
 dockers:
   - image_templates:
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-amd64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
     dockerfile: Dockerfile.release
     use: buildx
     goarch: amd64
@@ -108,7 +108,7 @@ dockers:
     skip_push: false
 
   - image_templates:
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-arm64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
     dockerfile: Dockerfile.release
     use: buildx
     goarch: arm64
@@ -119,14 +119,14 @@ dockers:
     skip_push: false
 
 docker_manifests:
-  - name_template: SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}
+  - name_template: 0xpolygon/{{ .ProjectName }}:{{ .Version }}
     image_templates:
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-amd64
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-arm64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: false
 
-  - name_template: SECRYPT-2022/{{ .ProjectName }}:latest
+  - name_template: 0xpolygon/{{ .ProjectName }}:latest
     image_templates:
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-amd64
-      - SECRYPT-2022/{{ .ProjectName }}:{{ .Version }}-arm64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-amd64
+      - 0xpolygon/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: false
