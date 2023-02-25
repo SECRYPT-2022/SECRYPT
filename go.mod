@@ -52,7 +52,7 @@ require (
 	github.com/umbracle/ethgo v0.1.4-0.20220722090909-c8ac32939570
 	github.com/valyala/fastjson v1.6.3 // indirect
 	go.uber.org/zap v1.22.0 // indirect
-	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
+	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/tools v0.1.12 // indirect
 	google.golang.org/genproto v0.0.0-20221010155953-15ba04fc1c0e
 	gopkg.in/yaml.v3 v3.0.1
@@ -61,7 +61,10 @@ require (
 
 require github.com/0xPolygon/go-ibft v0.0.0-20220810095021-e43142f8d267
 
-require gopkg.in/DataDog/dd-trace-go.v1 v1.43.1
+require (
+	github.com/go-kit/kit v0.9.0
+	gopkg.in/DataDog/dd-trace-go.v1 v1.43.1
+)
 
 require (
 	cloud.google.com/go/compute v1.10.0 // indirect
@@ -73,6 +76,7 @@ require (
 	github.com/DataDog/gostackparse v0.5.0 // indirect
 	github.com/DataDog/sketches-go v1.2.1 // indirect
 	github.com/Microsoft/go-winio v0.5.1 // indirect
+	github.com/VividCortex/gohistogram v1.0.0 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -187,10 +191,10 @@ require (
 	go4.org/intern v0.0.0-20211027215823-ae77deb06f29 // indirect
 	go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760 // indirect
 	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
-	golang.org/x/net v0.0.0-20221012135044-0b7e1fb9d458 // indirect
+	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20221006150949-b44042a4b9c1 // indirect
 	golang.org/x/sync v0.0.0-20220929204114-8fcdb60fdcc0 // indirect
-	golang.org/x/text v0.3.8 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	golang.org/x/time v0.0.0-20220411224347-583f2d630306 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/api v0.99.0 // indirect
