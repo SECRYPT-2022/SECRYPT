@@ -50,7 +50,7 @@
             "EIP158": 0,
             "EIP155": 0
         },
-        "chainID": 1143,
+        "chainID": 1144,
         "engine": {
             "ibft": {
                 "epochSize": 120,
