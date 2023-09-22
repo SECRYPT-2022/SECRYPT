@@ -48,11 +48,37 @@ You should see something like this:
 go version go1.18.7 linux/amd64
 ```
 
+### Prerequisites
+
+```
+sudo apt-get install build-essential
+sudo apt-get update
+sudo apt install build-essential
+
+```
+
+### Port Open
+
+```
+sudo ufw allow 30301
+sudo ufw allow 30302
+sudo ufw allow 30303
+sudo ufw allow 26656
+sudo ufw allow 26660
+sudo ufw allow 8545
+sudo ufw allow 8546
+sudo ufw allow 1478
+sudo ufw allow 7071
+sudo ufw allow 1317
+sudo ufw allow 9632
+```
+
 ### Build SECRYPT
 ```
 git clone https://github.com/SECRYPT-2022/SECRYPT.git
 cd SECRYPT/
 go build -o secrypt main.go
+go mod tidy
 ```
 
 ### Create data directory
