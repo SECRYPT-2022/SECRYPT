@@ -8,11 +8,13 @@ Create a directory to store your keys and testnet blockchain data
 ```
 mkdir ~/.testsxc
 cd ~/SECRYPT
+
 ```
 
 Run this to generate your keys
 ```
 ./secrypt secrets init  --data-dir ~/.testsxc
+
 ```
 
 You should see something like this:
@@ -29,10 +31,12 @@ Save that somewhere and continue to the next step.
 ### Setup staking contracts
 Download staking contracts:
 ```
+sudo apt install npm
 git clone https://github.com/SECRYPT-2022/staking-contracts.git
 cd staking-contracts
 npm i
 cp .env.example .env
+
 ```
 
 Now open up the .env file and fill out the missing parts. Fill out the variables like so:
@@ -45,6 +49,7 @@ STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
 The `YOUR_VALIDATOR_PRIVATE_KEY_HERE` variable can be found in this file: 
 ```
 ~/.testsxc/consensus/validator.key
+
 ```
 
 Save the `.env` file and continue on
@@ -59,21 +64,25 @@ Public key (address) = 0xXXXXX...
 Once you have completed the steps above, run the following:
 ```
 npm run stake
+
 ```
 
 It run run a few seconds until the transaction confirms. Once the script is done running, you can run this script to confirm that your validator was added as well as the total staked amount and list of validators. 
 ```
 npm run info
+
 ```
 
 When you are done staking and want to un-stake, run this command:
 ```
 npm run info
+
 ```
 
 ## Part 4 - Start Your Validator
 ```
 ./secrypt server --data-dir ~/.testsxc --chain testnet-genesis.json --seal --max-slots 40960 --grpc 0.0.0.0:9632 --libp2p 0.0.0.0:1478 --jsonrpc 0.0.0.0:8545 --max-inbound-peers 128 --max-outbound-peers 16
+
 ```
 
 Once you run that, your validator will start syncing with the testnet blockchain and begin validating. 
