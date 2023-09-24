@@ -36,14 +36,8 @@ git clone https://github.com/SECRYPT-2022/staking-contracts.git
 cd staking-contracts
 npm i
 cp .env.example .env
+sudo chown -R $USER:$(id -gn $USER) /home/dev01/.config
 
-```
-
-Now open up the .env file and fill out the missing parts. Fill out the variables like so:
-```
-JSONRPC_URL=http://ttv-wkqbnkghpr.dynamic-m.com:8544
-PRIVATE_KEYS=YOUR_VALIDATOR_PRIVATE_KEY_HERE
-STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
 ```
 
 The `YOUR_VALIDATOR_PRIVATE_KEY_HERE` variable can be found in this file: 
@@ -52,10 +46,24 @@ The `YOUR_VALIDATOR_PRIVATE_KEY_HERE` variable can be found in this file:
 
 ```
 
-Save the `.env` file and continue on
+Now open up the .env file and fill out the missing parts. Fill out the variables like so:
+
+```
+sudo nano .env
+
+```
+
+```
+JSONRPC_URL=http://ttv-wkqbnkghpr.dynamic-m.com:8544
+PRIVATE_KEYS=**YOUR_VALIDATOR_PRIVATE_KEY_HERE**
+STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
+```
+
+**Save the `.env` file and continue on**
 
 ### Fund your wallet
-Send at least 8.1 SXC to the wallet address that you generated in Part 2: 
+Send at least 8.1 SXC from https://faucet.secrypt.tech/ to the wallet address that you generated in Part 2: 
+
 ```
 Public key (address) = 0xXXXXX...
 ```
@@ -67,7 +75,7 @@ npm run stake
 
 ```
 
-It run run a few seconds until the transaction confirms. Once the script is done running, you can run this script to confirm that your validator was added as well as the total staked amount and list of validators. 
+It will run a few minutes until the transaction confirms. Once the script is done running, you can run this script to confirm that your validator was added as well as the total staked amount and list of validators. 
 ```
 npm run info
 
