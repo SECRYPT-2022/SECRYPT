@@ -23,6 +23,7 @@ Requirements - `Go >=1.18.x`
 #### Setup Go Path
 ```
 sudo nano ~/.profile
+
 ```
 Paste this into the bottom of the file
 ```
@@ -31,6 +32,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 ```
 ```
 source ~/.profile
+
 ```
 
 ### Install Go
@@ -38,10 +40,12 @@ source ~/.profile
 wget https://go.dev/dl/go1.18.7.linux-amd64.tar.gz
 sudo tar -xvf go1.18.7.linux-amd64.tar.gz
 sudo mv go /usr/local && rm go1.18.7.linux-amd64.tar.gz
+
 ```
 Check that it's installed
 ```
 go version
+
 ```
 You should see something like this:
 ```
@@ -71,6 +75,7 @@ sudo ufw allow 1478
 sudo ufw allow 7071
 sudo ufw allow 1317
 sudo ufw allow 9632
+
 ```
 
 ### Build SECRYPT
@@ -79,11 +84,14 @@ git clone https://github.com/SECRYPT-2022/SECRYPT.git
 cd SECRYPT/
 go build -o secrypt main.go
 go mod tidy
+go build -o secrypt main.go
+
 ```
 
 ### Create data directory
 ```
 mkdir ~/.secrypt
+
 ```
 
 ## Running a Node
